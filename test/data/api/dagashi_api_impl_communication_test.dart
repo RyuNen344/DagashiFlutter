@@ -1,6 +1,6 @@
 import 'package:dagashi_flutter/data/api/app_dio.dart';
 import 'package:dagashi_flutter/data/api/dagashi_api.dart';
-import 'package:dagashi_flutter/data/api/dagashi_api_impl.dart';
+import 'package:dagashi_flutter/data/api/impl/dagashi_api_impl.dart';
 import 'package:dagashi_flutter/data/api/response/mile_stones_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
