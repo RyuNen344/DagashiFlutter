@@ -1,6 +1,6 @@
 import 'package:dagashi_flutter/data/api/app_dio.dart';
 import 'package:dagashi_flutter/data/api/dagashi_api.dart';
-import 'package:dagashi_flutter/data/api/dagashi_api_impl.dart';
+import 'package:dagashi_flutter/data/api/impl/dagashi_api_impl.dart';
 import 'package:dagashi_flutter/data/api/response/mile_stones_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,6 +30,11 @@ void main() {
       MileStonesRootResponse result = await _dagashiApi.milestones();
       await _dagashiApi.milestones(
           previousEndCursor: result.milestones.pageInfo.endCursor);
+    });
+
+    test('Issue', () async {
+      MileStonesRootResponse result = await _dagashiApi.milestones();
+      await _dagashiApi.issues(path: result.milestones.nodes.first.path);
     });
   });
 }
