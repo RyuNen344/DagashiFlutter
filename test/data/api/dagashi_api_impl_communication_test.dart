@@ -31,5 +31,10 @@ void main() {
       await _dagashiApi.milestones(
           previousEndCursor: result.milestones.pageInfo.endCursor);
     });
+
+    test('Issue', () async {
+      MileStonesRootResponse result = await _dagashiApi.milestones();
+      await _dagashiApi.issues(path: result.milestones.nodes.first.path);
+    });
   });
 }
