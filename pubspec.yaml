@@ -14,6 +14,10 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.0
 
+  # For Architecture
+  flutter_hooks: ^0.15.0
+  hooks_riverpod: ^0.12.1
+
   # For Networking
   dio: ^3.0.10
   ua_client_hints: ^1.0.3
@@ -24,6 +28,9 @@ dependencies:
   # For Model
   json_serializable: ^3.5.1
   freezed_annotation: ^0.12.0
+
+  # For Utilities
+  get: ^3.17.1
 
 dev_dependencies:
   flutter_test:
