@@ -1,5 +1,5 @@
 import 'package:enum_to_string/enum_to_string.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 enum Flavor { dev, prd }
 
@@ -32,6 +32,9 @@ class Constants {
   factory Constants._prd() {
     return const Constants(endpoint: "https://androiddagashi.github.io");
   }
+
+  // Routing
+  static const String pageMileStone = '/milestone';
 
   static Constants _instance;
 

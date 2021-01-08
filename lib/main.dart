@@ -20,6 +20,7 @@ Future<void> main() async {
   runZonedGuarded(() {
     runApp(ProviderScope(child: DagashiApp()));
   }, (error, stackTrace) {
+    print(error);
     print(stackTrace);
   });
 }

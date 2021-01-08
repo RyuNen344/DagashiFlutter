@@ -12,7 +12,8 @@ class MileStoneMapper {
         description: response.description,
         closedAt: response.closedAt,
         issues: response.issues.nodes
-            .map((node) => _SummaryIssueMapper.toModel(node)),
+            .map((node) => _SummaryIssueMapper.toModel(node))
+            .toList(),
         path: response.path);
   }
 }
