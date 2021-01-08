@@ -33,6 +33,9 @@ class Constants {
     return const Constants(endpoint: "https://androiddagashi.github.io");
   }
 
+  // Routing
+  static const String pageMileStone = '/milestone';
+
   static Constants _instance;
 
   final String endpoint;
