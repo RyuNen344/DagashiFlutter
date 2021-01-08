@@ -1,5 +1,5 @@
 import 'package:enum_to_string/enum_to_string.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 enum Flavor { dev, prd }
 

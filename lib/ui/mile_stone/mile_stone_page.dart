@@ -1,7 +1,8 @@
-import 'package:dagashi_flutter/ui/mile_stone/viewmodel/mile_stone_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import 'file:///H:/workplace/02_ryunen/DagashiFlutter/lib/ui/mile_stone/mile_stone_view_model.dart';
 
 import 'mile_stone_item.dart';
 
