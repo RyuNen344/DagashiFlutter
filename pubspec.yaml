@@ -12,7 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.0
+  flutter_localizations:
+    sdk: flutter
 
   # For Architecture
   flutter_hooks: ^0.15.0
