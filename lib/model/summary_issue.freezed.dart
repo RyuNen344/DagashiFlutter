@@ -29,6 +29,7 @@ const $SummaryIssue = _$SummaryIssueTearOff();
 mixin _$SummaryIssue {
   String get title;
 
+  @JsonKey(ignore: true)
   $SummaryIssueCopyWith<SummaryIssue> get copyWith;
 }
 
@@ -112,6 +113,7 @@ class _$_SummaryIssue implements _SummaryIssue {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
+  @JsonKey(ignore: true)
   @override
   _$SummaryIssueCopyWith<_SummaryIssue> get copyWith =>
       __$SummaryIssueCopyWithImpl<_SummaryIssue>(this, _$identity);
@@ -123,5 +125,6 @@ abstract class _SummaryIssue implements SummaryIssue {
   @override
   String get title;
   @override
+  @JsonKey(ignore: true)
   _$SummaryIssueCopyWith<_SummaryIssue> get copyWith;
 }

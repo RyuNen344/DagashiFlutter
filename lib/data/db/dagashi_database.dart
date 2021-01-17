@@ -16,4 +16,10 @@ abstract class DagashiDatabase extends FloorDatabase {
   MileStoneDao get mileStoneDao;
 
   SummaryIssueDao get summaryIssueDao;
+
+  static const DATABASE_NAME = 'dagashi.db';
+
+  static Future<DagashiDatabase> build() async {
+    return await $FloorDagashiDatabase.databaseBuilder(DATABASE_NAME).build();
+  }
 }

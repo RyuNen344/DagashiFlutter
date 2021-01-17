@@ -48,6 +48,7 @@ mixin _$PageInfo {
   bool get hasNextPage;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $PageInfoCopyWith<PageInfo> get copyWith;
 }
 
@@ -184,6 +185,7 @@ class _$_PageInfo implements _PageInfo {
       const DeepCollectionEquality().hash(hasPreviousPage) ^
       const DeepCollectionEquality().hash(hasNextPage);
 
+  @JsonKey(ignore: true)
   @override
   _$PageInfoCopyWith<_PageInfo> get copyWith =>
       __$PageInfoCopyWithImpl<_PageInfo>(this, _$identity);
@@ -212,5 +214,6 @@ abstract class _PageInfo implements PageInfo {
   @override
   bool get hasNextPage;
   @override
+  @JsonKey(ignore: true)
   _$PageInfoCopyWith<_PageInfo> get copyWith;
 }

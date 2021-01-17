@@ -12,7 +12,7 @@ abstract class MileStoneDao extends BaseDao<MileStoneEntity> {
 @dao
 abstract class SummaryIssueDao extends BaseDao<SummaryIssueEntity> {
   @Query('SELECT * FROM summary_issue')
-  Stream<List<SummaryIssueEntity>> select();
+  Future<List<SummaryIssueEntity>> select();
 
   @Query('SELECT * FROM summary_issue WHERE mile_stone_id = :id')
   Future<List<SummaryIssueEntity>> selectById(int id);

@@ -57,6 +57,7 @@ mixin _$IssueRootResponse {
   IssuesResponse get issues;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $IssueRootResponseCopyWith<IssueRootResponse> get copyWith;
 }
 
@@ -249,6 +250,7 @@ class _$_IssueRootResponse implements _IssueRootResponse {
       const DeepCollectionEquality().hash(closedAt) ^
       const DeepCollectionEquality().hash(issues);
 
+  @JsonKey(ignore: true)
   @override
   _$IssueRootResponseCopyWith<_IssueRootResponse> get copyWith =>
       __$IssueRootResponseCopyWithImpl<_IssueRootResponse>(this, _$identity);
@@ -287,6 +289,7 @@ abstract class _IssueRootResponse implements IssueRootResponse {
   @override
   IssuesResponse get issues;
   @override
+  @JsonKey(ignore: true)
   _$IssueRootResponseCopyWith<_IssueRootResponse> get copyWith;
 }
 
@@ -327,6 +330,7 @@ mixin _$IssuesResponse {
   List<IssueNodeResponse> get nodes;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $IssuesResponseCopyWith<IssuesResponse> get copyWith;
 }
 
@@ -459,6 +463,7 @@ class _$_IssuesResponse implements _IssuesResponse {
       const DeepCollectionEquality().hash(pageInfo) ^
       const DeepCollectionEquality().hash(nodes);
 
+  @JsonKey(ignore: true)
   @override
   _$IssuesResponseCopyWith<_IssuesResponse> get copyWith =>
       __$IssuesResponseCopyWithImpl<_IssuesResponse>(this, _$identity);
@@ -485,6 +490,7 @@ abstract class _IssuesResponse implements IssuesResponse {
   @override
   List<IssueNodeResponse> get nodes;
   @override
+  @JsonKey(ignore: true)
   _$IssuesResponseCopyWith<_IssuesResponse> get copyWith;
 }
 
@@ -531,6 +537,7 @@ mixin _$IssueNodeResponse {
   CommentsResponse get comments;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $IssueNodeResponseCopyWith<IssueNodeResponse> get copyWith;
 }
 
@@ -709,6 +716,7 @@ class _$_IssueNodeResponse implements _IssueNodeResponse {
       const DeepCollectionEquality().hash(labels) ^
       const DeepCollectionEquality().hash(comments);
 
+  @JsonKey(ignore: true)
   @override
   _$IssueNodeResponseCopyWith<_IssueNodeResponse> get copyWith =>
       __$IssueNodeResponseCopyWithImpl<_IssueNodeResponse>(this, _$identity);
@@ -741,6 +749,7 @@ abstract class _IssueNodeResponse implements IssueNodeResponse {
   @override
   CommentsResponse get comments;
   @override
+  @JsonKey(ignore: true)
   _$IssueNodeResponseCopyWith<_IssueNodeResponse> get copyWith;
 }
 
@@ -774,6 +783,7 @@ mixin _$LabelsResponse {
   List<LabelNodeResponse> get nodes;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $LabelsResponseCopyWith<LabelsResponse> get copyWith;
 }
 
@@ -864,6 +874,7 @@ class _$_LabelsResponse implements _LabelsResponse {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(nodes);
 
+  @JsonKey(ignore: true)
   @override
   _$LabelsResponseCopyWith<_LabelsResponse> get copyWith =>
       __$LabelsResponseCopyWithImpl<_LabelsResponse>(this, _$identity);
@@ -884,6 +895,7 @@ abstract class _LabelsResponse implements LabelsResponse {
   @override
   List<LabelNodeResponse> get nodes;
   @override
+  @JsonKey(ignore: true)
   _$LabelsResponseCopyWith<_LabelsResponse> get copyWith;
 }
 
@@ -924,6 +936,7 @@ mixin _$LabelNodeResponse {
   String get color;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $LabelNodeResponseCopyWith<LabelNodeResponse> get copyWith;
 }
 
@@ -1040,6 +1053,7 @@ class _$_LabelNodeResponse implements _LabelNodeResponse {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(color);
 
+  @JsonKey(ignore: true)
   @override
   _$LabelNodeResponseCopyWith<_LabelNodeResponse> get copyWith =>
       __$LabelNodeResponseCopyWithImpl<_LabelNodeResponse>(this, _$identity);
@@ -1066,6 +1080,7 @@ abstract class _LabelNodeResponse implements LabelNodeResponse {
   @override
   String get color;
   @override
+  @JsonKey(ignore: true)
   _$LabelNodeResponseCopyWith<_LabelNodeResponse> get copyWith;
 }
 
@@ -1106,6 +1121,7 @@ mixin _$CommentsResponse {
   List<CommentNodeResponse> get nodes;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $CommentsResponseCopyWith<CommentsResponse> get copyWith;
 }
 
@@ -1242,6 +1258,7 @@ class _$_CommentsResponse implements _CommentsResponse {
       const DeepCollectionEquality().hash(pageInfo) ^
       const DeepCollectionEquality().hash(nodes);
 
+  @JsonKey(ignore: true)
   @override
   _$CommentsResponseCopyWith<_CommentsResponse> get copyWith =>
       __$CommentsResponseCopyWithImpl<_CommentsResponse>(this, _$identity);
@@ -1268,6 +1285,7 @@ abstract class _CommentsResponse implements CommentsResponse {
   @override
   List<CommentNodeResponse> get nodes;
   @override
+  @JsonKey(ignore: true)
   _$CommentsResponseCopyWith<_CommentsResponse> get copyWith;
 }
 
@@ -1308,6 +1326,7 @@ mixin _$CommentNodeResponse {
   AuthorResponse get author;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $CommentNodeResponseCopyWith<CommentNodeResponse> get copyWith;
 }
 
@@ -1439,6 +1458,7 @@ class _$_CommentNodeResponse implements _CommentNodeResponse {
       const DeepCollectionEquality().hash(publishedAt) ^
       const DeepCollectionEquality().hash(author);
 
+  @JsonKey(ignore: true)
   @override
   _$CommentNodeResponseCopyWith<_CommentNodeResponse> get copyWith =>
       __$CommentNodeResponseCopyWithImpl<_CommentNodeResponse>(
@@ -1466,6 +1486,7 @@ abstract class _CommentNodeResponse implements CommentNodeResponse {
   @override
   AuthorResponse get author;
   @override
+  @JsonKey(ignore: true)
   _$CommentNodeResponseCopyWith<_CommentNodeResponse> get copyWith;
 }
 
@@ -1506,6 +1527,7 @@ mixin _$AuthorResponse {
   String get avatarUrl;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $AuthorResponseCopyWith<AuthorResponse> get copyWith;
 }
 
@@ -1620,6 +1642,7 @@ class _$_AuthorResponse implements _AuthorResponse {
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(avatarUrl);
 
+  @JsonKey(ignore: true)
   @override
   _$AuthorResponseCopyWith<_AuthorResponse> get copyWith =>
       __$AuthorResponseCopyWithImpl<_AuthorResponse>(this, _$identity);
@@ -1646,5 +1669,6 @@ abstract class _AuthorResponse implements AuthorResponse {
   @override
   String get avatarUrl;
   @override
+  @JsonKey(ignore: true)
   _$AuthorResponseCopyWith<_AuthorResponse> get copyWith;
 }

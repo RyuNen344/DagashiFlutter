@@ -218,7 +218,7 @@ class _$MileStoneDao extends MileStoneDao {
 
 class _$SummaryIssueDao extends SummaryIssueDao {
   _$SummaryIssueDao(this.database, this.changeListener)
-      : _queryAdapter = QueryAdapter(database, changeListener),
+      : _queryAdapter = QueryAdapter(database),
         _summaryIssueEntityInsertionAdapter = InsertionAdapter(
             database,
             'summary_issue',
@@ -226,8 +226,7 @@ class _$SummaryIssueDao extends SummaryIssueDao {
                   'id': item.id,
                   'mile_stone_id': item.mileStoneId,
                   'title': item.title
-                },
-            changeListener),
+                }),
         _summaryIssueEntityUpdateAdapter = UpdateAdapter(
             database,
             'summary_issue',
@@ -236,8 +235,7 @@ class _$SummaryIssueDao extends SummaryIssueDao {
                   'id': item.id,
                   'mile_stone_id': item.mileStoneId,
                   'title': item.title
-                },
-            changeListener);
+                });
 
   final sqflite.DatabaseExecutor database;
 
@@ -251,10 +249,8 @@ class _$SummaryIssueDao extends SummaryIssueDao {
   final UpdateAdapter<SummaryIssueEntity> _summaryIssueEntityUpdateAdapter;
 
   @override
-  Stream<List<SummaryIssueEntity>> select() {
-    return _queryAdapter.queryListStream('SELECT * FROM summary_issue',
-        queryableName: 'summary_issue',
-        isView: false,
+  Future<List<SummaryIssueEntity>> select() async {
+    return _queryAdapter.queryList('SELECT * FROM summary_issue',
         mapper: (Map<String, dynamic> row) => SummaryIssueEntity(
             row['id'] as int,
             row['mile_stone_id'] as String,
