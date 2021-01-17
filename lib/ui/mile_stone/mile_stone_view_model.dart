@@ -16,6 +16,7 @@ mixin MileStoneViewModelOutput {
 class MileStoneViewModel extends ChangeNotifier
     with MileStoneViewModelInput, MileStoneViewModelOutput {
   MileStoneViewModel(this._mileStoneRepository) {
+    _mileStoneRepository.refresh();
     _bindingOutput();
   }
 
@@ -27,9 +28,9 @@ class MileStoneViewModel extends ChangeNotifier
   List<MileStone> get mileStone => _mileStone;
 
   void _bindingOutput() {
-    _mileStoneRepository
-        .mileStones()
-        .then((value) => _mileStone = value)
-        .whenComplete(notifyListeners);
+    _mileStoneRepository.mileStones().listen((value) {
+      _mileStone = value;
+      notifyListeners();
+    });
   }
 }

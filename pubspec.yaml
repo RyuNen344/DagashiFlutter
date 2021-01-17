@@ -33,6 +33,9 @@ dependencies:
   json_serializable: ^3.5.1
   freezed_annotation: ^0.12.0
 
+  # Rx
+  rxdart: ^0.25.0
+
   # For Utilities
   get: ^3.17.1
 
