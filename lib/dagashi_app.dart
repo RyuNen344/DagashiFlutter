@@ -1,4 +1,5 @@
 import 'package:dagashi_flutter/constants.dart';
+import 'package:dagashi_flutter/ui/issues/path/path_issues_page.dart';
 import 'package:dagashi_flutter/ui/mile_stone/mile_stone_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -16,7 +17,10 @@ class DagashiApp extends HookWidget {
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: const [_locale],
       home: MileStonePage(),
-      routes: {Constants.pageMileStone: (context) => MileStonePage()},
+      routes: {
+        Constants.pageMileStone: (context) => MileStonePage(),
+        Constants.issuesPath: (context) => PathIssuesPage()
+      },
     );
   }
 }

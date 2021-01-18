@@ -35,6 +35,7 @@ class Constants {
 
   // Routing
   static const String pageMileStone = '/milestone';
+  static const String issuesPath = '/issues/path';
 
   static Constants _instance;
 
