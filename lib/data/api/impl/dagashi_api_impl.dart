@@ -21,7 +21,7 @@ class DagashiApiImpl implements DagashiApi {
   }
 
   @override
-  Future<IssueRootResponse> issues({String path}) {
+  Future<IssueRootResponse> issues({@required String path}) {
     return _dio
         .get('/api/issue/$path.json')
         .then((response) => IssueRootResponse.fromJson(response.data));

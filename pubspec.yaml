@@ -39,6 +39,9 @@ dependencies:
   # For Utilities
   get: ^3.17.1
 
+  # Logger
+  logger: ^0.9.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,5 +1,8 @@
 import 'package:dagashi_flutter/model/mile_stone.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../constants.dart';
 
 class MileStoneItem extends StatelessWidget {
   MileStoneItem(this._mileStone, this._isLast);
@@ -42,7 +45,7 @@ class MileStoneItem extends StatelessWidget {
           ],
         ),
         onTap: () {
-          debugPrint('$_mileStone');
+          Get.toNamed(Constants.issuesPath, arguments: _mileStone);
         },
       ),
     );
