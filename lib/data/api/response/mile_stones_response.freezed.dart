@@ -46,6 +46,7 @@ mixin _$MileStonesRootResponse {
   MileStonesResponse get milestones;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $MileStonesRootResponseCopyWith<MileStonesRootResponse> get copyWith;
 }
 
@@ -191,6 +192,7 @@ class _$_MileStonesRootResponse
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(milestones);
 
+  @JsonKey(ignore: true)
   @override
   _$MileStonesRootResponseCopyWith<_MileStonesRootResponse> get copyWith =>
       __$MileStonesRootResponseCopyWithImpl<_MileStonesRootResponse>(
@@ -218,6 +220,7 @@ abstract class _MileStonesRootResponse implements MileStonesRootResponse {
   @override
   MileStonesResponse get milestones;
   @override
+  @JsonKey(ignore: true)
   _$MileStonesRootResponseCopyWith<_MileStonesRootResponse> get copyWith;
 }
 
@@ -258,6 +261,7 @@ mixin _$MileStonesResponse {
   PageInfo get pageInfo;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $MileStonesResponseCopyWith<MileStonesResponse> get copyWith;
 }
 
@@ -408,6 +412,7 @@ class _$_MileStonesResponse
       const DeepCollectionEquality().hash(nodes) ^
       const DeepCollectionEquality().hash(pageInfo);
 
+  @JsonKey(ignore: true)
   @override
   _$MileStonesResponseCopyWith<_MileStonesResponse> get copyWith =>
       __$MileStonesResponseCopyWithImpl<_MileStonesResponse>(this, _$identity);
@@ -434,6 +439,7 @@ abstract class _MileStonesResponse implements MileStonesResponse {
   @override
   PageInfo get pageInfo;
   @override
+  @JsonKey(ignore: true)
   _$MileStonesResponseCopyWith<_MileStonesResponse> get copyWith;
 }
 
@@ -490,6 +496,7 @@ mixin _$MileStoneNodeResponse {
   String get path;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $MileStoneNodeResponseCopyWith<MileStoneNodeResponse> get copyWith;
 }
 
@@ -714,6 +721,7 @@ class _$_MileStoneNodeResponse
       const DeepCollectionEquality().hash(issues) ^
       const DeepCollectionEquality().hash(path);
 
+  @JsonKey(ignore: true)
   @override
   _$MileStoneNodeResponseCopyWith<_MileStoneNodeResponse> get copyWith =>
       __$MileStoneNodeResponseCopyWithImpl<_MileStoneNodeResponse>(
@@ -756,6 +764,7 @@ abstract class _MileStoneNodeResponse implements MileStoneNodeResponse {
   @override
   String get path;
   @override
+  @JsonKey(ignore: true)
   _$MileStoneNodeResponseCopyWith<_MileStoneNodeResponse> get copyWith;
 }
 
@@ -793,6 +802,7 @@ mixin _$MileStoneIssuesResponse {
   List<MileStoneIssueResponse> get nodes;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $MileStoneIssuesResponseCopyWith<MileStoneIssuesResponse> get copyWith;
 }
 
@@ -911,6 +921,7 @@ class _$_MileStoneIssuesResponse
       const DeepCollectionEquality().hash(totalCount) ^
       const DeepCollectionEquality().hash(nodes);
 
+  @JsonKey(ignore: true)
   @override
   _$MileStoneIssuesResponseCopyWith<_MileStoneIssuesResponse> get copyWith =>
       __$MileStoneIssuesResponseCopyWithImpl<_MileStoneIssuesResponse>(
@@ -935,6 +946,7 @@ abstract class _MileStoneIssuesResponse implements MileStoneIssuesResponse {
   @override
   List<MileStoneIssueResponse> get nodes;
   @override
+  @JsonKey(ignore: true)
   _$MileStoneIssuesResponseCopyWith<_MileStoneIssuesResponse> get copyWith;
 }
 
@@ -969,6 +981,7 @@ mixin _$MileStoneIssueResponse {
   String get title;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $MileStoneIssueResponseCopyWith<MileStoneIssueResponse> get copyWith;
 }
 
@@ -1069,6 +1082,7 @@ class _$_MileStoneIssueResponse
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
+  @JsonKey(ignore: true)
   @override
   _$MileStoneIssueResponseCopyWith<_MileStoneIssueResponse> get copyWith =>
       __$MileStoneIssueResponseCopyWithImpl<_MileStoneIssueResponse>(
@@ -1090,5 +1104,6 @@ abstract class _MileStoneIssueResponse implements MileStoneIssueResponse {
   @override
   String get title;
   @override
+  @JsonKey(ignore: true)
   _$MileStoneIssueResponseCopyWith<_MileStoneIssueResponse> get copyWith;
 }

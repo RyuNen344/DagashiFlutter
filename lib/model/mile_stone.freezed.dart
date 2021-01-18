@@ -51,6 +51,7 @@ mixin _$MileStone {
   List<SummaryIssue> get issues;
   String get path;
 
+  @JsonKey(ignore: true)
   $MileStoneCopyWith<MileStone> get copyWith;
 }
 
@@ -231,6 +232,7 @@ class _$_MileStone implements _MileStone {
       const DeepCollectionEquality().hash(issues) ^
       const DeepCollectionEquality().hash(path);
 
+  @JsonKey(ignore: true)
   @override
   _$MileStoneCopyWith<_MileStone> get copyWith =>
       __$MileStoneCopyWithImpl<_MileStone>(this, _$identity);
@@ -264,5 +266,6 @@ abstract class _MileStone implements MileStone {
   @override
   String get path;
   @override
+  @JsonKey(ignore: true)
   _$MileStoneCopyWith<_MileStone> get copyWith;
 }
