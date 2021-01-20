@@ -6,6 +6,9 @@ import 'package:hooks_riverpod/all.dart';
 final dagashiDatabaseHelperProvider =
     Provider<DatabaseHelper>((ref) => DatabaseHelper.databaseHelper);
 
-final mileStoneDatabaseProvider = Provider<MileStoneDatabase>((ref) =>
+final dagashiDatabaseProvider = Provider<DagashiDatabaseImpl>((ref) =>
     DagashiDatabaseImpl(
         databaseHelper: ref.read(dagashiDatabaseHelperProvider)));
+
+final mileStoneDatabaseProvider =
+    Provider<MileStoneDatabase>((ref) => ref.read(dagashiDatabaseProvider));
