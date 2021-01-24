@@ -13,13 +13,17 @@ class PathIssuesPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(_args.title),
       ),
-      body: HookBuilder(builder: (context) {
-        final issues = useProvider(
-            pathIssuesViewModelProvider(_args.number, _args.path)
-                .select((value) => value.issues));
+      body: Stack(
+        children: [
+          HookBuilder(builder: (context) {
+            final issues = useProvider(
+                pathIssuesViewModelProvider(_args.number, _args.path)
+                    .select((value) => value.issues));
 
-        return Scaffold();
-      }),
+            return Container();
+          })
+        ],
+      ),
     );
   }
 }
