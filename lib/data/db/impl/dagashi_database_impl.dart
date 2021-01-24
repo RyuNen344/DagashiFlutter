@@ -1,13 +1,15 @@
 import 'package:dagashi_flutter/data/db/dagashi_database.dart';
 import 'package:dagashi_flutter/data/db/database_helper.dart';
+import 'package:dagashi_flutter/data/db/entity/combined/issue_with_label_and_comment.dart';
 import 'package:dagashi_flutter/data/db/entity/combined/mile_stone_with_summary_issue.dart';
 import 'package:dagashi_flutter/data/db/entity/mile_stone_entity.dart';
 import 'package:dagashi_flutter/data/db/entity/summary_issue_entity.dart';
+import 'package:dagashi_flutter/data/db/issue_database.dart';
 import 'package:dagashi_flutter/data/db/mile_stone_database.dart';
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
-class DagashiDatabaseImpl implements MileStoneDatabase {
+class DagashiDatabaseImpl implements MileStoneDatabase, IssueDatabase {
   DagashiDatabaseImpl({@required DatabaseHelper databaseHelper})
       : this._databaseHelper = databaseHelper;
 
@@ -42,5 +44,17 @@ class DagashiDatabaseImpl implements MileStoneDatabase {
         .insertList(entity.map((e) => e.mileStoneEntity).toList());
     database.summaryIssueDao
         .insertList(entity.expand((e) => e.issues).toList());
+  }
+
+  @override
+  Stream<List<IssueWithLabelAndComment>> issueEntity(int number) {
+    // TODO: implement issueEntity
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> saveIssue(List<IssueWithLabelAndComment> entity) {
+    // TODO: implement saveIssue
+    throw UnimplementedError();
   }
 }

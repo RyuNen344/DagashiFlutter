@@ -13,7 +13,7 @@ class MileStoneEntity {
   final String title;
   @ColumnInfo(name: 'description', nullable: false)
   final String description;
-  @ColumnInfo(name: 'closedAt', nullable: false)
+  @ColumnInfo(name: 'closed_at', nullable: false)
   final DateTime closedAt;
   @ColumnInfo(name: 'path', nullable: false)
   final String path;
