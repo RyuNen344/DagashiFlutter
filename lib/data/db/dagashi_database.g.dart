@@ -98,7 +98,7 @@ class _$DagashiDatabase extends DagashiDatabase {
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `summary_issue` (`id` INTEGER NOT NULL, `mile_stone_id` TEXT NOT NULL, `title` TEXT NOT NULL, FOREIGN KEY (`mile_stone_id`) REFERENCES `mile_stone` (`id`) ON UPDATE NO ACTION ON DELETE NO ACTION, PRIMARY KEY (`id`, `mile_stone_id`))');
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `issue` (`single_unique_id` TEXT NOT NULL, `id` TEXT NOT NULL, `number` INTEGER NOT NULL, `url` TEXT NOT NULL, `title` TEXT NOT NULL, `body` TEXT NOT NULL, PRIMARY KEY (`single_unique_id`))');
+            'CREATE TABLE IF NOT EXISTS `issue` (`single_unique_id` TEXT NOT NULL, `id` INTEGER NOT NULL, `number` INTEGER NOT NULL, `url` TEXT NOT NULL, `title` TEXT NOT NULL, `body` TEXT NOT NULL, PRIMARY KEY (`single_unique_id`))');
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `label` (`name` TEXT NOT NULL, `description` TEXT NOT NULL, `color` TEXT NOT NULL, PRIMARY KEY (`name`))');
         await database.execute(
@@ -425,7 +425,7 @@ class _$IssueDao extends IssueDao {
         isView: false,
         mapper: (Map<String, dynamic> row) => IssueEntity(
             row['single_unique_id'] as String,
-            row['id'] as String,
+            row['id'] as int,
             row['number'] as int,
             row['url'] as String,
             row['title'] as String,

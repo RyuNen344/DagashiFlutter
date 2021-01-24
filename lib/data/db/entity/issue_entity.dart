@@ -6,7 +6,7 @@ class IssueEntity {
   @ColumnInfo(name: 'single_unique_id', nullable: false)
   final String singleUniqueId;
   @ColumnInfo(name: 'id', nullable: false)
-  final String id;
+  final int id;
   @ColumnInfo(name: 'number', nullable: false)
   final int number;
   @ColumnInfo(name: 'url', nullable: false)
