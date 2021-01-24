@@ -12,8 +12,8 @@ import 'package:floor/floor.dart';
       entity: IssueEntity,
       onDelete: ForeignKeyAction.cascade),
   ForeignKey(
-      childColumns: ['name'],
-      parentColumns: ['label_name'],
+      childColumns: ['label_name'],
+      parentColumns: ['name'],
       entity: LabelEntity,
       onDelete: ForeignKeyAction.cascade)
 ])
