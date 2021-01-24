@@ -47,10 +47,12 @@ class DagashiDatabaseImpl implements MileStoneDatabase, IssueDatabase {
   @override
   Future<void> saveMileStone(List<MileStoneWithSummaryIssue> entity) async {
     DagashiDatabase database = await _databaseHelper.database;
-    database.mileStoneDao
-        .insertOrUpdateList(entity.map((e) => e.mileStoneEntity).toList());
-    database.summaryIssueDao
-        .insertOrUpdateList(entity.expand((e) => e.issues).toList());
+    database.runOnTransaction((transactionDatabase) async {
+      await transactionDatabase.mileStoneDao
+          .insertOrUpdateList(entity.map((e) => e.mileStoneEntity).toList());
+      await transactionDatabase.summaryIssueDao
+          .insertOrUpdateList(entity.expand((e) => e.issues).toList());
+    });
   }
 
   @override
@@ -89,24 +91,29 @@ class DagashiDatabaseImpl implements MileStoneDatabase, IssueDatabase {
   @override
   Future<void> saveIssue(List<IssueWithLabelAndComment> entity) async {
     DagashiDatabase database = await _databaseHelper.database;
-    database.issueDao
-        .insertOrUpdateList(entity.map((e) => e.issueEntity).toList());
-    database.labelDao
-        .insertOrUpdateList(entity.expand((e) => e.labelEntities).toList());
-    database.issueLabelCrossRefDao.insertOrUpdateList(entity
-        .expand((e) => e.labelEntities.map((label) =>
-            IssueLabelCrossRef(e.issueEntity.singleUniqueId, label.name)))
-        .toList());
-    database.commentDao.insertOrUpdateList(entity
-        .expand((e) => e.commentAuthorEntities.map((e) => e.commentEntity))
-        .toList());
-    database.authorDao.insertOrUpdateList(entity
-        .expand((e) => e.commentAuthorEntities.map((e) => e.authorEntity))
-        .toList());
-    database.commentAuthorCrossRefDao.insertOrUpdateList(entity.expand((e) =>
-        e.commentAuthorEntities.map((commentAuthor) => CommentAuthorCrossRef(
-            commentAuthor.commentEntity.id,
-            commentAuthor.commentEntity.singleUniqueId,
-            commentAuthor.authorEntity.login))));
+    database.runOnTransaction((transactionDatabase) async {
+      await transactionDatabase.issueDao
+          .insertOrUpdateList(entity.map((e) => e.issueEntity).toList());
+      await transactionDatabase.labelDao
+          .insertOrUpdateList(entity.expand((e) => e.labelEntities).toList());
+      await transactionDatabase.issueLabelCrossRefDao.insertOrUpdateList(entity
+          .expand((e) => e.labelEntities.map((label) =>
+              IssueLabelCrossRef(e.issueEntity.singleUniqueId, label.name)))
+          .toList());
+      await transactionDatabase.commentDao.insertOrUpdateList(entity
+          .expand((e) => e.commentAuthorEntities.map((e) => e.commentEntity))
+          .toList());
+      await transactionDatabase.authorDao.insertOrUpdateList(entity
+          .expand((e) => e.commentAuthorEntities.map((e) => e.authorEntity))
+          .toList());
+      await transactionDatabase.commentAuthorCrossRefDao.insertOrUpdateList(
+          entity
+              .expand((e) => e.commentAuthorEntities.map((commentAuthor) =>
+                  CommentAuthorCrossRef(
+                      commentAuthor.commentEntity.id,
+                      commentAuthor.commentEntity.singleUniqueId,
+                      commentAuthor.authorEntity.login)))
+              .toList());
+    });
   }
 }

@@ -45,6 +45,8 @@ abstract class DagashiDatabase extends FloorDatabase {
 
   LabelDao get labelDao;
 
+  Future<void> runOnTransaction(Function(_$DagashiDatabase) daoExecution);
+
   static const DATABASE_NAME = 'dagashi.db';
 
   static Future<DagashiDatabase> build() async {
