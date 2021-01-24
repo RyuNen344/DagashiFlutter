@@ -24,9 +24,8 @@ abstract class IssueLabelCrossRefDao extends BaseDao<IssueLabelCrossRef> {
 @dao
 abstract class CommentAuthorCrossRefDao extends BaseDao<CommentAuthorCrossRef> {
   @Query(
-      'SELECT * FROM comment_author_cross_ref WHERE id = :id AND single_unique_id = :singleUniqueId AND login = :login')
-  Future<CommentAuthorCrossRef> select(
-      int id, String singleUniqueId, String login);
+      'SELECT * FROM comment_author_cross_ref WHERE id = :id AND single_unique_id = :singleUniqueId')
+  Future<CommentAuthorCrossRef> select(int id, String singleUniqueId);
 }
 
 @dao

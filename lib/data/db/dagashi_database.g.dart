@@ -611,11 +611,10 @@ class _$CommentAuthorCrossRefDao extends CommentAuthorCrossRefDao {
       _commentAuthorCrossRefUpdateAdapter;
 
   @override
-  Future<CommentAuthorCrossRef> select(
-      int id, String singleUniqueId, String login) async {
+  Future<CommentAuthorCrossRef> select(int id, String singleUniqueId) async {
     return _queryAdapter.query(
-        'SELECT * FROM comment_author_cross_ref WHERE id = ? AND single_unique_id = ? AND login = ?',
-        arguments: <dynamic>[id, singleUniqueId, login],
+        'SELECT * FROM comment_author_cross_ref WHERE id = ? AND single_unique_id = ?',
+        arguments: <dynamic>[id, singleUniqueId],
         mapper: (Map<String, dynamic> row) => CommentAuthorCrossRef(
             row['id'] as int,
             row['single_unique_id'] as String,
