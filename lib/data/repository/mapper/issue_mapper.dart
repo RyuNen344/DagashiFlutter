@@ -12,7 +12,7 @@ import 'package:dagashi_flutter/model/label.dart';
 
 class IssueMapper {
   static List<IssueWithLabelAndComment> toEntity(IssueRootResponse response) {
-    response.issues.nodes.asMap().keys.toList().map((index) {
+    return response.issues.nodes.asMap().keys.toList().map((index) {
       return IssueWithLabelAndComment(
           IssueEntity(
               '${response.number}_$index',
@@ -36,7 +36,8 @@ class IssueMapper {
             .map((e) => _LabelMapper.toModel(e))
             .toList(),
         comments: issueWithLabelAndComment.commentAuthorEntities
-            .map((e) => _CommentMapper.toModel(e)));
+            .map((e) => _CommentMapper.toModel(e))
+            .toList());
   }
 }
 
@@ -58,7 +59,7 @@ class _LabelMapper {
 class _CommentMapper {
   static List<CommentAuthor> toEntity(
       String singleUniqueId, CommentsResponse response) {
-    response.nodes.asMap().keys.toList().map((index) {
+    return response.nodes.asMap().keys.toList().map((index) {
       return CommentAuthor(
           CommentEntity(index, singleUniqueId, response.nodes[index].body,
               response.nodes[index].publishedAt),

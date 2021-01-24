@@ -49,7 +49,7 @@ class _$DagashiDatabaseBuilder {
     database.database = await database.open(
       path,
       _migrations,
-      _callback,
+      _callback
     );
     return database;
   }
@@ -159,6 +159,19 @@ class _$DagashiDatabase extends DagashiDatabase {
   @override
   LabelDao get labelDao {
     return _labelDaoInstance ??= _$LabelDao(database, changeListener);
+  }
+
+  @override
+  Future<void> runOnTransaction(Function(_$DagashiDatabase) daoExecution) async {
+    if (database is sqflite.Transaction) {
+      daoExecution(this);
+    } else {
+      await (database as sqflite.Database).transaction<void>((transaction) async {
+        final transactionDatabase = _$DagashiDatabase(changeListener)
+          ..database = transaction;
+        daoExecution(transactionDatabase);
+      });
+    }
   }
 }
 
@@ -805,7 +818,7 @@ class _$CommentDao extends CommentDao {
   @override
   Future<List<CommentEntity>> select(String singleUniqueId) async {
     return _queryAdapter.queryList(
-        'SELECT * FROM comment WHERE singleUniqueId = ?',
+        'SELECT * FROM comment WHERE single_unique_id = ?',
         arguments: <dynamic>[singleUniqueId],
         mapper: (Map<String, dynamic> row) => CommentEntity(
             row['id'] as int,

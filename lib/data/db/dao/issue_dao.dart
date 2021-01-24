@@ -36,7 +36,7 @@ abstract class AuthorDao extends BaseDao<AuthorEntity> {
 
 @dao
 abstract class CommentDao extends BaseDao<CommentEntity> {
-  @Query('SELECT * FROM comment WHERE singleUniqueId = :singleUniqueId')
+  @Query('SELECT * FROM comment WHERE single_unique_id = :singleUniqueId')
   Future<List<CommentEntity>> select(String singleUniqueId);
 }
 
