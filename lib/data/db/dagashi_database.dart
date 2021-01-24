@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:dagashi_flutter/data/db/dao/issue_dao.dart';
-import 'package:dagashi_flutter/data/db/entity/author_entity.dart';
 import 'package:floor/floor.dart';
 import 'package:sqflite/sqflite.dart' as sqflite;
 
 import 'converter/date_time_converter.dart';
+import 'dao/issue_dao.dart';
 import 'dao/mile_stone_dao.dart';
+import 'entity/author_entity.dart';
 import 'entity/comment_entity.dart';
 import 'entity/issue_entity.dart';
 import 'entity/label_entity.dart';
