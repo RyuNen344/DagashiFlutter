@@ -106,7 +106,7 @@ class _$DagashiDatabase extends DagashiDatabase {
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `author` (`login` TEXT NOT NULL, `url` TEXT NOT NULL, `avatar_url` TEXT NOT NULL, PRIMARY KEY (`login`))');
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `issue_label_cross_ref` (`single_unique_id` TEXT NOT NULL, `label_name` TEXT NOT NULL, FOREIGN KEY (`single_unique_id`) REFERENCES `issue` (`single_unique_id`) ON UPDATE NO ACTION ON DELETE CASCADE, FOREIGN KEY (`name`) REFERENCES `label` (`label_name`) ON UPDATE NO ACTION ON DELETE CASCADE, PRIMARY KEY (`single_unique_id`, `label_name`))');
+            'CREATE TABLE IF NOT EXISTS `issue_label_cross_ref` (`single_unique_id` TEXT NOT NULL, `label_name` TEXT NOT NULL, FOREIGN KEY (`single_unique_id`) REFERENCES `issue` (`single_unique_id`) ON UPDATE NO ACTION ON DELETE CASCADE, FOREIGN KEY (`label_name`) REFERENCES `label` (`name`) ON UPDATE NO ACTION ON DELETE CASCADE, PRIMARY KEY (`single_unique_id`, `label_name`))');
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `comment_author_cross_ref` (`id` INTEGER NOT NULL, `single_unique_id` TEXT NOT NULL, `login` TEXT NOT NULL, FOREIGN KEY (`id`) REFERENCES `comment` (`id`) ON UPDATE NO ACTION ON DELETE CASCADE, FOREIGN KEY (`single_unique_id`) REFERENCES `comment` (`single_unique_id`) ON UPDATE NO ACTION ON DELETE CASCADE, FOREIGN KEY (`login`) REFERENCES `author` (`login`) ON UPDATE NO ACTION ON DELETE CASCADE, PRIMARY KEY (`id`, `single_unique_id`, `login`))');
         await database.execute(
